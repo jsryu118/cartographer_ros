@@ -18,6 +18,22 @@ Cartographer ROS Integration
 
 |build| |docs| |license|
 
+Note
+=======
+
+**This repository contains a minor modification to the original Cartographer_ros code.**
+At `node.cc`_ and `node.h`_ , there are some additional lines for publish pose data at 'base_link' frame.
+There should be no translation between ``tracking_frame`` and the IMU frame. 
+Therefore, if there is any translation between them, 
+although it is possible to create a new node to obtain the pose of base_link, it was instead implemented internally.
+
+
+.. _node.cc: https://github.com/jsryu118/cartographer_ros/blob/master/cartographer_ros/cartographer_ros/node.cc
+.. _node.h: https://github.com/jsryu118/cartographer_ros/blob/master/cartographer_ros/cartographer_ros/node.h
+
+
+
+
 Purpose
 =======
 
